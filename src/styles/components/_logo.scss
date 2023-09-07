@@ -1,0 +1,33 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+
+    cursor: pointer;
+
+    .image-container {
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-right: 2.5px solid $primary-color;
+        padding-right: 0.1rem;
+
+        img {
+            max-width: 90%;
+        }
+    }
+
+    h2{
+        padding: 0.3rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.1rem;
+        font-weight: 800;
+
+        span{
+            color: $primary-color;
+        }
+    }
+}

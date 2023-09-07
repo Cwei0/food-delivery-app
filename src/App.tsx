@@ -1,17 +1,15 @@
-import { Footer, Hero, Meals, Navbar, Review } from "./layouts"
+import { Footer, Hero, Meals, Navbar, Review } from "./layouts";
 
 const App = () => {
   return (
     <div className="app">
-      <div className="main">
-        <Navbar/>
-        <Hero/>
-        <Meals/>
-        <Review/>
-        <Footer/>
-      </div>
+      <Navbar />
+      <Hero />
+      <Meals />
+      <Review />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
