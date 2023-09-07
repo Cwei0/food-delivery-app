@@ -2,12 +2,12 @@ import { Button, Logo } from "../../components";
 import { HiOutlineSearch } from "react-icons/hi";
 import { FaShoppingBasket } from "react-icons/fa";
 import { useMediaQuery } from "../../hooks";
-import { HiBars3 } from "react-icons/hi2";
+import { HiBars3, HiXMark } from "react-icons/hi2";
 import { useState } from "react";
 
 export const Navbar = () => {
   const links: Array<string> = ["Home", "Menu", "Service", "Contact"];
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   return (
     <>
@@ -33,14 +33,36 @@ export const Navbar = () => {
                 </div>
               </div>
             ) : (
-              <Button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <button
+                className="nav-button"
+                onClick={() => setIsMenuToggled(!isMenuToggled)}
+              >
                 <HiBars3 />
-              </Button>
+              </button>
             )}
           </div>
         </div>
 
         {/* Mobile Menu */}
+        {!isAboveMediumScreens && isMenuToggled && (
+          <div className="mobile-menu">
+            {/* icon container */}
+            <div className="icon-container">
+              <FaShoppingBasket />
+              <button>
+                <HiXMark />
+              </button>
+            </div>
+            {/* Menu Items */}
+            <div className="menu-container">
+              {links.map((link, i) => (
+                <p key={i} className="menu">
+                  {link}
+                </p>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );

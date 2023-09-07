@@ -6,7 +6,8 @@
 
 nav {
     @extend %flex-between;
-    padding: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     width: 100%;
 
     .nav-container {
@@ -18,7 +19,7 @@ nav {
         .nav-wrapper {
             @extend %flex-between;
             width: 100%;
-            gap: 15rem;
+            gap: 30%;
 
             .links-container {
                 @extend %flex-between;
@@ -48,6 +49,14 @@ nav {
                         margin-right: 0.7rem;
                     }
                 }
+            }
+
+            .nav-button {
+                padding: 0.4rem;
+                border: none;
+                border-radius: 20%;
+                background-color: $primary-color;
+                color: white;
             }
         }
     }
